@@ -6,6 +6,9 @@ const App = () => {
 
   const [board, setBoard] = useState(["?", "?", "?", "?", "?", "?", "?", "?", "?"])
 
+  const handleGamePlay = (index) => {
+    alert(index)
+  }
 
   return(
     <>
@@ -13,7 +16,7 @@ const App = () => {
       <div className="boardgame">
         {board.map((value, index) => {
           return (
-            <Square value={value} />
+            <Square value={value} index={index} handleGamePlay={handleGamePlay} />
           )
         })}
       </div>
